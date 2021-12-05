@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 1f;
+    private const float walkSpeed = 1.5f;
+    private const float runSpeed = 3f;
+
+    private float moveSpeed = walkSpeed;
     public Rigidbody2D Rigidbody2D;
     public Animator animator;
 
@@ -28,7 +31,15 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
 
-
+        if (Input.GetKey(KeyCode.LeftShift)) {
+            // Set current speed to run if shift is down
+            moveSpeed = runSpeed;
+        }
+        else
+        {
+            // Otherwise set current speed to walking speed
+            moveSpeed = walkSpeed;
+        }
     }
 
 

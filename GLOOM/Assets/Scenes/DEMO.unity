@@ -488,7 +488,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 392b39ad375d2f54f96341f7b871ab3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
   Rigidbody2D: {fileID: 998094586}
   animator: {fileID: 998094587}
 --- !u!212 &998094584
@@ -550,8 +549,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 998094582}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.6657, y: -1.2223, z: 0}
-  m_LocalScale: {x: 2.9896345, y: 2.9896345, z: 2.9896345}
+  m_LocalPosition: {x: -4.829, y: -0.729, z: 0}
+  m_LocalScale: {x: 4.1328707, y: 4.1328707, z: 4.1328707}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
