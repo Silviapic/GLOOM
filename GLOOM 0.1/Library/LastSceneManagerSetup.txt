@@ -1,5 +1,0 @@
-sceneSetups:
-- path: Assets/Tiny RPG Forest/Scenes/Demo.unity
-  isLoaded: 0
-  isActive: 0
-  isSubScene: 0
