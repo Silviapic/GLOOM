@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
-{
+{   
+    //Variables
     private const float walkSpeed = 1.5f;
     private const float runSpeed = 3f;
+    private AudioSource footstep;
 
     private float moveSpeed = walkSpeed;
     public Rigidbody2D Rigidbody2D;
@@ -16,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        footstep = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -32,21 +34,24 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Speed", movement.sqrMagnitude);
 
         if (Input.GetKey(KeyCode.LeftShift)) {
-            // Set current speed to run if shift is down
+            // Shift + tecla de moviment permet correr
             moveSpeed = runSpeed;
         }
         else
         {
-            // Otherwise set current speed to walking speed
+            // Per defecte la velocitat del personatge es la de caminar
             moveSpeed = walkSpeed;
         }
     }
-
-
 
     void FixedUpdate()
     {
         //Movement
         Rigidbody2D.MovePosition(Rigidbody2D.position + movement * moveSpeed * Time.fixedDeltaTime);
+    }
+
+    private void Footstep()
+    {
+        footstep.Play();
     }
 }
